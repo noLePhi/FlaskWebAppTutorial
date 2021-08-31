@@ -11,6 +11,11 @@ views = Blueprint("views", __name__)
 def home():
     return render_template("home.html", user=current_user)
 
+@views.route("/author")
+@login_required
+def author():
+    return render_template("author.html", user=current_user)
+
 @views.route("/posts", methods=['GET', 'POST'])
 @login_required
 def get_posts():

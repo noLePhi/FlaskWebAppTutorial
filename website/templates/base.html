@@ -27,11 +27,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="/home">Home</a>
             {% if user.is_authenticated %}
             <a class="nav-item nav-link" href="/posts">Posts</a>
+            <a class="nav-item nav-link" href="/author">About me</a>
             <a class="nav-item nav-link" href="/logout">Logout</a>
             {% else %}
             <a class="nav-item nav-link" href="/login">Login</a>
@@ -39,6 +41,7 @@
             {% endif %}
           </div>
         </div>
+
       </div>
     </nav>
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
