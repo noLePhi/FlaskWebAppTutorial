@@ -15,7 +15,7 @@ def home():
 @login_required
 def get_posts():
     posts = Post.query.all()
-    return render_template('posts_div.html', user=current_user, posts=posts)
+    return render_template('posts.html', user=current_user, posts=posts)
 
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
@@ -30,7 +30,7 @@ def create_post():
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.posts-div'))
 
     return render_template('create_post.html', user=current_user)
 
@@ -63,7 +63,7 @@ def posts(username):
         return redirect(url_for('views.home'))
 
     posts = user.posts
-    return render_template("posts.html", user=current_user, posts=posts, username=username)
+    return render_template("userposts.html", user=current_user, posts=posts, username=username)
 
 
 @views.route("/create-comment/<post_id>", methods=['POST'])
