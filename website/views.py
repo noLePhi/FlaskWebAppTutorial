@@ -22,7 +22,7 @@ def get_posts():
     posts = Post.query.all()
     return render_template('posts.html', user=current_user, posts=posts)
 
-@views.route("/create-post", methods=['GET', 'POST'])
+@views.route("/create_post", methods=['GET', 'POST'])
 @login_required
 def create_post():
     if request.method == "POST":
