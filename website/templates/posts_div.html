@@ -1,6 +1,13 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+{% extends "base.html" %} {% block title %}Posts{% endblock %} {% block content
 %}
 <h1 align="center">{% block header %}Posts{% endblock %}</h1>
+<div align="right">
+  <a href="/create-post"
+    ><button type="button" class="btn btn-primary btn-lg">
+      New Post
+    </button></a
+  >
+</div></br>
 <div id="posts">
   {% for post in posts %}
   <div class="card border-dark">
@@ -107,11 +114,5 @@
   <br/ > {% endfor %}
 </div>
 {% block footer %}
-<div align="center">
-  <a href="/create-post"
-    ><button type="button" class="btn btn-primary btn-lg">
-      Create a Post
-    </button></a
-  >
-</div>
+
 {% endblock %} {% endblock %}
