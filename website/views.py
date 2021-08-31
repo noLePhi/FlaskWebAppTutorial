@@ -30,7 +30,8 @@ def create_post():
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
-            return redirect(url_for('views.posts-div'))
+            posts = Post.query.all()
+            return render_template('posts.html', user=current_user, posts=posts)
 
     return render_template('create_post.html', user=current_user)
 
@@ -42,14 +43,15 @@ def delete_post(id):
 
     if not post:
         flash("Post does not exist.", category='error')
-    elif current_user.id != post.id:
+    elif current_user.id != post.author:
         flash('You do not have permission to delete this post.', category='error')
     else:
         db.session.delete(post)
         db.session.commit()
         flash('Post deleted.', category='success')
 
-    return redirect(url_for('views.home'))
+    posts = Post.query.all()
+    return render_template('posts.html', user=current_user, posts=posts)
 
 
 # check all posts of a specific user
@@ -60,7 +62,8 @@ def posts(username):
 
     if not user:
         flash('No user with that username exists.', category='error')
-        return redirect(url_for('views.home'))
+        posts = Post.query.all()
+        return render_template('posts.html', user=current_user, posts=posts)
 
     posts = user.posts
     return render_template("userposts.html", user=current_user, posts=posts, username=username)
@@ -83,7 +86,8 @@ def create_comment(post_id):
         else:
             flash('Post does not exist.', category='error')
 
-    return redirect(url_for('views.home'))
+    posts = Post.query.all()
+    return render_template('posts.html', user=current_user, posts=posts)
 
 
 @views.route("/delete-comment/<comment_id>")
@@ -99,7 +103,8 @@ def delete_comment(comment_id):
         db.session.delete(comment)
         db.session.commit()
 
-    return redirect(url_for('views.home'))
+    posts = Post.query.all()
+    return render_template('posts.html', user=current_user, posts=posts)
 
 
 @views.route("/like-post/<post_id>", methods=['POST'])
