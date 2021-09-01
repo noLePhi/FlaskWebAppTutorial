@@ -36,7 +36,6 @@ def get_articles():
 
     research_subject = "deep learning"
 
-    # page_url = 'https://scholar.google.com/scholar?hl=fr&as_sdt=0%2C5&q=' + research_subject + '&btnG='
     page_url = 'https://scholar.google.com/scholar?hl=fr&as_sdt=0,5&q=%22' + research_subject + '%22&scisbd=1'
 
     html = requests.get(page_url, headers=headers, proxies=proxies).text

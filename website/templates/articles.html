@@ -1,8 +1,17 @@
-{% extends "base.html" %} {% block title %}Articles{% endblock %} {% block content %}
+{% extends "base.html" %}
+{% block title %}Articles{% endblock %}
+{% block content %}
 
   <div class="content is-large" align="center">
     <h1>Articles</h1>
   </div>
+  <div class="buttons has-addons is-centered" >
+      <a class="button nav-link">Trending</a>
+      <a class="button is-info is-selected nav-link" >Last 10</a>
+      <a class="button nav-link" >Recommended</a>
+  </div>
+
+
 
     <div id="articles">
     {%  for article in articles %}
