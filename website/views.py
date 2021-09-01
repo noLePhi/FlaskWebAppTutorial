@@ -16,6 +16,11 @@ def home():
 def author():
     return render_template("author.html", user=current_user)
 
+@views.route("/articles", methods=['GET', 'POST'])
+@login_required
+def get_articles():
+    return render_template('articles.html', user=current_user)
+
 @views.route("/posts", methods=['GET', 'POST'])
 @login_required
 def get_posts():
