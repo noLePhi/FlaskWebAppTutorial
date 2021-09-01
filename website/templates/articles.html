@@ -6,9 +6,8 @@
     <h1>Articles</h1>
   </div>
   <div class="buttons has-addons is-centered" >
-      <a class="button nav-link">Trending</a>
-      <a class="button is-info is-selected nav-link" >Last 10</a>
-      <a class="button nav-link" >Recommended</a>
+      <a class="button is-info is-selected nav-link" href="/articles/last" >Last</a>
+      <a class="button nav-link" href="/articles/recommended">Recommended</a>
   </div>
 
 
@@ -18,7 +17,7 @@
       <div class="card border-dark">
         <div class="card-header d-flex justify-content-between align-items-center">
             <a>{{ article.title }}</a>
-              <a class="button is-info nav-link" href={{ article.title_link }}>
+              <a class="button is-info nav-link" target="_blank" href={{ article.title_link }} >
                 <strong>Link</strong>
               </a>
         </div>
