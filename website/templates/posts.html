@@ -1,14 +1,15 @@
-{% extends "base.html" %} {% block title %}Posts{% endblock %}
+{% extends "base.html" %}
+{% block title %}Posts{% endblock %}
 
 {% block content %}
-
+<br/>
   <div class="content is-large" align="center">
     <h1>Posts</h1>
   </div>
 
-<div align="right">
-              <a class="button is-info nav-link" href="/create-post">
-                <strong>New Post</strong>
+<div align="center">
+              <a class="button is-primary is-large is-rounded nav-link" href="/create-post">
+                <strong> + </strong>
               </a>
 </div></br>
 <div id="posts">
@@ -35,7 +36,7 @@
         <div class="btn-group">
           <button
             type="button"
-            class="button button-sm is-info dropdown-toggle"
+            class="button button-sm is-info dropdown-toggle is-rounded is-outlined"
             data-bs-toggle="dropdown"
           ></button>
           <ul class="dropdown-menu">
@@ -68,7 +69,7 @@
                 <div class="btn-group">
                   <button
                     type="button"
-                    class="button btn-sm is-info dropdown-toggle"
+                    class="button is-small is-info dropdown-toggle is-rounded is-outlined"
                     data-bs-toggle="dropdown"
                   ></button>
                   <ul class="dropdown-menu">

@@ -1,7 +1,8 @@
-{% extends "base.html" %} {% block title %}Sign Up{% endblock %}
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
 
 {% block content %}
-
+<br/>
   <div class="content is-large" align="center">
     <h1>Sign Up</h1>
   </div>
@@ -14,7 +15,7 @@
       id="email"
       name="email"
       class="form-control"
-      placeholder="Enter Email"
+      placeholder="johndoe@mail.com"
     />
     <label for="username">Username</label>
     <input
@@ -22,7 +23,7 @@
       id="username"
       name="username"
       class="form-control"
-      placeholder="Enter Username"
+      placeholder="JohnDoe"
     />
     <label for="password1">Password</label>
     <input
@@ -30,19 +31,19 @@
       id="password1"
       name="password1"
       class="form-control"
-      placeholder="Enter Password"
+      placeholder="********"
     />
-    <label for="password2">Password Again</label>
+    <label for="password2">Password (Confirm)</label>
     <input
       type="password"
       id="password2"
       name="password2"
       class="form-control"
-      placeholder="Enter Password Again"
+      placeholder="********"
     />
     <br />
     <div align="center">
-      <button class="btn btn-primary" type="submit">Sign Up</button>
+      <button class="button is-primary" type="submit">Create account</button>
     </div>
   </div>
 </form>
