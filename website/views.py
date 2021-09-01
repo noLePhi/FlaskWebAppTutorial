@@ -24,7 +24,7 @@ def get_posts():
     posts = Post.query.all()
     return render_template('posts.html', user=current_user, posts=posts)
 
-@views.route("/create_post", methods=['GET', 'POST'])
+@views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
     if request.method == "POST":
@@ -73,7 +73,7 @@ def posts(username):
         return render_template('posts.html', user=current_user, posts=posts)
 
     posts = user.posts
-    return render_template("userposts.html", user=current_user, posts=posts, username=username)
+    return render_template("userposts.html", user=current_user, posts=posts, username=user.username)
 
 
 @views.route("/create-comment/<post_id>", methods=['POST'])
